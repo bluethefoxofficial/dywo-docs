@@ -1,0 +1,33 @@
+name: Retrieve Build Artifacts
+
+# Triggers the workflow on push or pull request events to the default branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Copy the `index.html` and `bundle.js` from the /build directory
+    - name: Retrieve build artifacts
+      run: |
+        mkdir -p artifacts
+        cp ./build/index.html ./artifacts/index.html
+        cp ./build/bundle.js ./artifacts/bundle.js
+    
+    # Optionally upload the artifacts for later use
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: artifacts/
