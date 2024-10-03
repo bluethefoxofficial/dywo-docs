@@ -22,7 +22,7 @@ Runs the test suite.
 
 ## Learn More
 
-To learn more about Dywo, check out the [Dywo documentation](https://github.com/your-username/dywo-cli).
+To learn more about Dywo, check out the [Dywo documentation](https://github.com/bluethefoxofficial/dywo-docs).
 
 ## Getting Started
 
